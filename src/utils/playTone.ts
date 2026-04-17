@@ -1,9 +1,18 @@
-const ctx = new AudioContext();
+let ctx: AudioContext | null = null;
+
+function getCtx(): AudioContext {
+  if (!ctx) {
+    ctx = new AudioContext();
+  }
+  return ctx;
+}
 
 export async function playTone(frequency: number) {
+  const ctx = getCtx();
+
   if (ctx.state === "suspended") {
     await ctx.resume();
-  } // for mobile
+  }
 
   const osc = ctx.createOscillator();
   osc.frequency.value = frequency;
