@@ -17,7 +17,9 @@ No two grids sound or look the same.
 - Hovering a tile plays its note via the **Web Audio API** — no audio files, pure synthesized sound
 - Shapes animate in on generation and react on hover
 
-https://github.com/user-attachments/assets/d8ff4363-4c65-428a-8340-bdac1de1690e
+<div align="center">
+  <video src="https://github.com/user-attachments/assets/d8ff4363-4c65-428a-8340-bdac1de1690e" width="600"/>
+</div>
 
 ---
 
