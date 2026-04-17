@@ -325,6 +325,10 @@ button:hover {
     --s: 5px;
   }
 
+  .spiral {
+    --s: 3px;
+  }
+
   .triangle-up {
     border-left: calc((90vw - 40px) / 10) solid transparent;
     border-right: calc((90vw - 40px) / 10) solid transparent;

@@ -23,6 +23,7 @@ export default function Grid() {
                 } as React.CSSProperties
               }
               onMouseEnter={() => playTone(tile.note)}
+              onTouchStart={() => playTone(tile.note)}
             >
               {renderShape(tile)}
             </div>
