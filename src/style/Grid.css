@@ -293,3 +293,56 @@ button:hover {
     transform: scale(1);
   }
 }
+
+@media (max-width: 600px) {
+  .grid {
+    width: 90vw;
+    --tile-size: calc((90vw - 40px) / 5);
+  }
+
+  .tile {
+    width: var(--tile-size);
+    height: var(--tile-size);
+  }
+
+  .rotator {
+    width: var(--tile-size);
+    height: var(--tile-size);
+  }
+
+  .circle {
+    width: 89%;
+    height: 89%;
+  }
+
+  .rounded {
+    width: 89%;
+    height: 89%;
+    border-radius: 16px;
+  }
+
+  .wiggly-box {
+    --s: 5px;
+  }
+
+  .triangle-up {
+    border-left: calc((90vw - 40px) / 10) solid transparent;
+    border-right: calc((90vw - 40px) / 10) solid transparent;
+    border-bottom: calc((90vw - 40px) / 5) solid;
+  }
+  .triangle-down {
+    border-left: calc((90vw - 40px) / 10) solid transparent;
+    border-right: calc((90vw - 40px) / 10) solid transparent;
+    border-top: calc((90vw - 40px) / 5) solid;
+  }
+  .triangle-left {
+    border-top: calc((90vw - 40px) / 10) solid transparent;
+    border-bottom: calc((90vw - 40px) / 10) solid transparent;
+    border-right: calc((90vw - 40px) / 5) solid;
+  }
+  .triangle-right {
+    border-top: calc((90vw - 40px) / 10) solid transparent;
+    border-bottom: calc((90vw - 40px) / 10) solid transparent;
+    border-left: calc((90vw - 40px) / 5) solid;
+  }
+}

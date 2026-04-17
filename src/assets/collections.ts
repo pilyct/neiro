@@ -54,6 +54,17 @@ export const TONES = [
   [523, 587, 659, 784, 880, 988, 1046], // High register - delicate, glassy
   [261, 269, 285, 302, 320, 339, 359, 380], // Microtonal - alien, unsettling
   [110, 165, 220, 330, 440, 660, 880], // Open fifths - epic, spacious
+  [174, 196, 220, 261, 294, 349, 392], // Gregorian - ceremonial, ritualistic
+  [261, 277, 329, 349, 415, 440, 523], // Phrygian dominant - arabian, exotic
+  [261, 277, 311, 392, 415, 523, 554], // Pelog - balinese, hypnotic
+  [261, 269, 277, 285, 294, 311, 329], // Chromatic descent - horror, tension
+  [196, 220, 261, 311, 349, 392, 466], // Minor seventh - dreamy, lo-fi
+  [264, 297, 330, 352, 396, 440, 528], // Solfeggio - ancient, mystical
+  [440, 494, 523, 587, 659, 740, 830], // High electric - sci-fi, digital
+  [220, 247, 294, 330, 370, 440, 494], // Dorian - nordic, cold
+  [261, 294, 349, 392, 466, 523, 587], // Mixolydian - tropical, bright
+  [138, 155, 185, 207, 277, 311, 370], // Deep minor - cinematic, ominous
+  [330, 370, 415, 494, 554, 659, 740], // Lydian - ethereal, otherworldly
 ];
 
 // const TONES: number[] = [261, 294, 329, 392, 440, 523, 587, 659];
