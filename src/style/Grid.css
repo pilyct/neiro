@@ -1,0 +1,295 @@
+body {
+  background: #0f1115;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 40px;
+}
+
+/* Button styling (small but impactful) */
+button {
+  padding: 10px 18px;
+  /* background: #fff; */
+  border: none;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: transform 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+/* Grid */
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 500px;
+  gap: 10px; /* HUGE visual improvement */
+}
+
+.tile {
+  width: 90px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Base shape */
+
+.shape {
+  width: 100%;
+  height: 100%;
+  animation: fadeIn 0.4s ease forwards;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover interaction */
+
+.tile:hover .shape,
+.tile:hover .triangle {
+  transform: scale(1.15) rotate(5deg);
+}
+
+/* Shapes */
+
+.circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 4px dashed;
+}
+
+.small-circle {
+  width: 70%;
+  height: 70%;
+  border-radius: 50%;
+  border: 2px dashed black;
+}
+
+.half-circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  mask: linear-gradient(to right, black 50%, transparent 50%);
+}
+
+.rounded {
+  width: 85px;
+  height: 85px;
+  border-radius: 16px;
+}
+
+.small-square {
+  align-self: center;
+  width: 60%;
+  height: 60%;
+  /* transform: rotate(-45deg); */
+}
+
+/* Triangle */
+
+.triangle-up {
+  width: 0;
+  height: 0;
+  border-left: 45px solid transparent;
+  border-right: 45px solid transparent;
+  border-bottom: 90px solid;
+  animation: fadeIn 0.4s ease forwards;
+  transition: transform 0.2s ease;
+}
+
+.triangle-down {
+  width: 0;
+  height: 0;
+  border-left: 45px solid transparent;
+  border-right: 45px solid transparent;
+  border-top: 90px solid;
+  animation: fadeIn 0.4s ease forwards;
+  transition: transform 0.2s ease;
+}
+.triangle-left {
+  width: 0;
+  height: 0;
+  border-top: 45px solid transparent;
+  border-bottom: 45px solid transparent;
+  border-right: 90px solid;
+  animation: fadeIn 0.4s ease forwards;
+  transition: transform 0.2s ease;
+}
+
+.triangle-right {
+  width: 0;
+  height: 0;
+  border-top: 45px solid transparent;
+  border-bottom: 45px solid transparent;
+  border-left: 90px solid;
+  animation: fadeIn 0.4s ease forwards;
+  transition: transform 0.2s ease;
+}
+
+.starburst {
+  width: 100%;
+  aspect-ratio: 1;
+  clip-path: polygon(
+    100% 50%,
+    78.98% 57.76%,
+    93.3% 75%,
+    71.21% 71.21%,
+    75% 93.3%,
+    57.76% 78.98%,
+    50% 100%,
+    42.24% 78.98%,
+    25% 93.3%,
+    28.79% 71.21%,
+    6.7% 75%,
+    21.02% 57.76%,
+    0% 50%,
+    21.02% 42.24%,
+    6.7% 25%,
+    28.79% 28.79%,
+    25% 6.7%,
+    42.24% 21.02%,
+    50% 0%,
+    57.76% 21.02%,
+    75% 6.7%,
+    71.21% 28.79%,
+    93.3% 25%,
+    78.98% 42.24%
+  );
+  animation: fadeIn 0.4s ease forwards;
+  transition: transform 0.2s ease;
+}
+
+.spiral {
+  --b: 6px; /* smaller = better inside grid */
+  --c: #cd8c52;
+
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+
+  background:
+    repeating-radial-gradient(
+        calc(2 * var(--b)) at top,
+        #0000 -1px,
+        var(--c) 0 calc(50% - 1px),
+        #0000 50% calc(100% - 1px)
+      )
+      calc(50% + var(--b)) 100%,
+    repeating-radial-gradient(
+        calc(2 * var(--b)) at bottom,
+        var(--c) -1px,
+        #0000 0 calc(50% - 1px),
+        var(--c) 50% calc(100% - 1px)
+      )
+      50% 0;
+
+  background-size: 150% 50%;
+  background-repeat: no-repeat;
+
+  mask:
+    radial-gradient(
+        calc(1.5 * var(--b)) at calc(100% - var(--b) / 2) 0,
+        #0000 calc(100% / 3),
+        #000 calc(100% / 3 + 1px) 110%,
+        #0000 0
+      )
+      calc(50% + var(--b) / 2) 100% / calc(3 * var(--b)) 50% no-repeat,
+    conic-gradient(#000 0 0);
+  animation: fadeIn 0.4s ease forwards;
+  transition: transform 0.2s ease;
+}
+
+.wiggly-box {
+  --s: 8px; /* scale it down for tiles */
+  --c: #4ecdc4;
+
+  width: 100%;
+  height: 100%;
+
+  border: calc(2 * var(--s)) solid transparent;
+  padding: calc(4 * var(--s));
+  box-sizing: border-box;
+
+  background: var(--c);
+
+  mask:
+    conic-gradient(#000 0 0) no-repeat 50% / calc(100% - 6 * var(--s))
+      calc(100% - 6 * var(--s)),
+    /* radial-gradient(circle at center, #000 50%, transparent 70%), */
+    radial-gradient(var(--s), #000 100%, transparent calc(100% + 1px)) 0 0 /
+      calc(4 * var(--s)) calc(4 * var(--s)),
+    radial-gradient(var(--s), transparent calc(100% - 1px), #000) var(--s)
+      var(--s) / calc(2 * var(--s)) calc(2 * var(--s)) padding-box;
+
+  animation: fadeIn 0.4s ease forwards;
+  transition: transform 0.2s ease;
+}
+
+.flower {
+  width: 100%;
+  aspect-ratio: 1;
+  --g: /20.56% 20.56% radial-gradient(#000 calc(71% - 1px), #0000 71%) no-repeat;
+  mask:
+    100% 50% var(--g),
+    93.301% 75% var(--g),
+    75% 93.301% var(--g),
+    50% 100% var(--g),
+    25% 93.301% var(--g),
+    6.699% 75% var(--g),
+    0% 50% var(--g),
+    6.699% 25% var(--g),
+    25% 6.699% var(--g),
+    50% 0% var(--g),
+    75% 6.699% var(--g),
+    93.301% 25% var(--g),
+    radial-gradient(100% 100%, #000 38.366%, #0000 calc(38.366% + 1px));
+}
+
+.rotator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90px;
+  height: 90px;
+  /* transform: rotate(var(--r)); */
+  transition: transform 2s ease;
+}
+
+/* .tile:hover .rotator {
+  transform: rotate(calc(var(--r) + 360deg));
+} */
+
+.tile:hover .rotator {
+  animation: spin 1.5s linear infinite;
+}
+
+/* Animation */
+@keyframes spin {
+  from {
+    transform: rotate(var(--r));
+  }
+  to {
+    transform: rotate(calc(var(--r) + 360deg));
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
