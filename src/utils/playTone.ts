@@ -16,6 +16,7 @@ export async function playTone(frequency: number) {
 
   const osc = ctx.createOscillator();
   osc.frequency.value = frequency;
+  // osc.type = "triangle";
 
   const gain = ctx.createGain();
   gain.gain.setValueAtTime(0.3, ctx.currentTime);
